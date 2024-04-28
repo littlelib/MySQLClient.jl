@@ -1,0 +1,4 @@
+name = "MySQLClient"
+uuid = "c27b3865-12a4-4e32-9885-0a32f0bf5c34"
+authors = ["llib "]
+version = "0.1.0"
