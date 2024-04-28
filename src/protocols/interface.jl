@@ -1,6 +1,4 @@
-include("protocol_details/handshakev10.jl")
-include("protocol_details/response41.jl")
-include("protocol_details/authswitch.jl")
+include_from_dir("$(@__DIR__)/protocol_details/connection")
 
 function connect_to_db!(conn::ConnectionHandler)
     result_type, conn=handshake(conn)

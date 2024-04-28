@@ -25,3 +25,16 @@ function wrap_packet(packet_body, previous_count=-1)
     count=(previous_count+1)|>UInt8|>collect
     foldl(vcat, [packet_length, count, packet_body])
 end
+
+
+function include_from_dir(dirpath)
+    paths=readdir(dirpath, join=true)
+    for path in paths
+        if isfile(path)
+            if contains(path, r".\.jl$")
+                include(path)
+                println("included: $path")
+            end
+        end
+    end
+end
